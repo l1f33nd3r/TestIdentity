@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <h1>
+        Please Authenticate
+    </h1>
+    @using (Html.BeginForm("OnPost", "Login"))
+    {
+        <label for="login">Login:</label>
+        <input id="login" name="login" type="email" />
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" />
+        <input type="hidden" name="returnUrl" value="@Url.ActionContext.HttpContext.Request.Query["ReturnUrl"]" />
+        <input type="submit" />
+    }
+
+
+
+
+</body>
+</html>
